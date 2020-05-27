@@ -476,11 +476,19 @@ body {
   background: $secondary;
   width: 100%;
   position: relative;
-  height: 378px;
+  height: 594px;
+}
+
+.form-section__wrapper {
+  padding: 120px 0;
+}
+
+.form-section__title {
+  @include font-title1
 }
 
 .form-section__form {
-  margin-top: 40px;
+  margin-top: 33px;
 }
 
 .form-section__form__mail {
@@ -490,7 +498,7 @@ body {
 .form-section__form__submit {
   @include btn-primary;
   width: 410px;
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .form-section__personal {
@@ -513,7 +521,8 @@ body {
 .form-section__background {
   position: absolute;
   left: 50%;
-  height: 378px;
+  max-width: 41%;
+  height: 594px;
   background: url("../../src/assets/img/photographer.jpg") no-repeat 25% 75%;
   background-size: cover;
 }
