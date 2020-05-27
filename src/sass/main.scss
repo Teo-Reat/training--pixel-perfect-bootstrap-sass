@@ -1,0 +1,324 @@
+//Include bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+//Globals:
+//--colors
+$primary1: #496ADC;
+$primary2: #FAD192;
+$secondary: #FFF8EE;
+$black: #000;
+$black60: rgba(0, 0, 0, 0.6);
+$black40: rgba(0, 0, 0, 0.4);
+$black20: rgba(0, 0, 0, 0.2);
+$black08: rgba(0, 0, 0, 0.08);
+$white: #fff;
+$white60: rgba(255, 255, 255, 0.6);
+//--shadows
+$shadow-light: 0 2px 16px rgba(0, 0, 0, 0.08);
+$shadow-heavy: 0 4px 64px rgba(0, 0, 0, 0.2);
+
+//Mixins:
+//--typography
+@mixin font-title1 {
+  font-family: Gilroy, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 110%;
+}
+@mixin font-title2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+@mixin font-subtitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: $black60
+}
+@mixin font-body {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: $black60;
+}
+@mixin font-caption {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: $black40;
+}
+//--border
+@mixin light-border {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+//--buttons
+@mixin btn-primary {
+  background: $primary1;
+  color: $white;
+  padding: 20px 28px;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  border: none;
+}
+@mixin tab-primary {
+  border: none;
+  border-bottom: 2px solid $primary1;
+  padding: 30px 28px 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  background: transparent;
+}
+//--inputs
+
+//Fonts
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../../src/assets/fonts/Gilroy-Regular.eot');
+  src: local('Gilroy Regular'), local('Gilroy-Regular'),
+  url('../../src/assets/fonts/Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../../src/assets/fonts/Gilroy-Regular.woff2') format('woff2'),
+  url('../../src/assets/fonts/Gilroy-Regular.woff') format('woff'),
+  url('../../src/assets/fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+//Body
+body {
+  font-family: Gilroy, sans-serif;
+  padding-bottom: 60px;
+}
+
+//Header
+.header {
+  padding: 45px 2px 34px;
+}
+.header__row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.logo {
+  padding-left: 0;
+}
+.main-nav__block {
+  padding: 0;
+  margin: 0;
+  .main-nav__block__item {
+    list-style-type: none;
+    margin-left: 24px;
+    &:first-child {
+      margin-left: 0;
+    }
+    a {
+      @include font-body;
+      text-decoration: none;
+    }
+  }
+}
+.search-bar {
+  padding-right: 0;
+  .search-bar__button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    @include font-body;
+    color: $primary1
+  }
+}
+
+//Main:
+//--main title section
+.main-title {
+  margin-top: 80px;
+  .main-title__title {
+    @include font-title1;
+  }
+  .main-title__subtitle {
+    @include font-subtitle;
+    margin-top: 18px;
+  }
+}
+//--buttons
+.main-title__buttons {
+  margin-top: 23px;
+}
+.button-primary,
+.button-secondary {
+  @include btn-primary
+}
+.button-secondary {
+  background: $white;
+  color: $primary1;
+  box-shadow: $shadow-light;
+  margin-left: 16px;
+}
+//--group images section
+.group-images {
+  margin-top: 89px;
+  .group-images__image {
+    margin: 0 auto;
+  }
+}
+//--how it works section
+.how-it-works {
+  padding: 120px 0;
+  background: $secondary;
+}
+.how-it-works__title {
+  @include font-title1;
+}
+.tab-primary,
+.tab-secondary {
+  @include tab-primary;
+  @include font-body;
+  color: $primary1;
+  width: 233px;
+}
+.tab-secondary {
+  color: $black40;
+  border-bottom: 2px solid $black20;
+}
+.conditions {
+  margin-top: 80px;
+}
+.conditions__container__title {
+  @include font-title2
+}
+.conditions__container__description {
+  @include font-caption
+}
+.video-preview {
+  margin-top: 65px;
+  img {
+    width: 100%;
+    border-radius: 24px;
+  }
+}
+//--reviews section
+.reviews {
+  padding: 120px 0;
+}
+.reviews__title {
+  @include font-title1;
+  margin-left: -20px;
+}
+.reviews__description {
+  @include font-subtitle;
+  margin-top: 16px;
+  margin-left: -20px;
+}
+.reviews__row {
+  margin-top: 65px;
+}
+.reviews__review {
+  @include font-subtitle;
+  color: $black;
+  line-height: 30px;
+  box-shadow: $shadow-light;
+  padding: 30px 35px;
+}
+.reviews__author {
+  padding: 32px 32px;
+}
+.reviews__author__avatar {
+  height: 48px;
+  width: 48px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 16px;
+  img {
+    width: 48px;
+  }
+}
+.reviews__author__data {
+  h6 {
+    @include font-caption;
+    font-weight: 600;
+    color: $black;
+  }
+  span {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: $black60;
+  }
+}
+//--mountain-photo section
+.mountain {
+  height: 738px;
+  background-size: contain;
+  background: url("../../src/assets/img/mountain.jpg") no-repeat center;
+}
+//--advantages section
+.advantages {
+  padding: 120px 0;
+  background: $primary1;
+}
+.advantages__row {
+  margin-top: 58px;
+}
+.advantages__title {
+  @include font-title1;
+  color: $white;
+}
+.advantages__item {
+  position: relative;
+  z-index: 5;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.advantages__item__title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+}
+.defended {
+  background: $white;
+  margin-right: 16px;
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+.quickly {
+  background: $primary2;
+  margin-left: 16px;
+  img {
+    position: absolute;
+    right: 0;
+  }
+  .advantages__item__image1 {
+    top: 0;
+  }
+  .advantages__item__image2 {
+    bottom: 0;
+  }
+}
+.advantages__item__title {
+  width: 290px;
+  padding: 32px 0 0 20px;
+}
+.advantages__item__description {
+  display: block;
+  margin: 84px 0 0 18px;
+  @include font-body;
+  font-weight: 600;
+  color: $primary1
+}
+
