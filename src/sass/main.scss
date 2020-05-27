@@ -98,6 +98,7 @@ $shadow-heavy: 0 4px 64px rgba(0, 0, 0, 0.2);
     border: 2px solid $primary1;
   }
 }
+
 //Fonts
 @font-face {
   font-family: 'Gilroy';
@@ -168,8 +169,8 @@ body {
     width: 24px;
     height: 24px;
     display: block;
-    top: 0;
-    left: 0;
+    top: 4px;
+    left: 13px;
   }
 }
 
@@ -398,6 +399,7 @@ body {
   @include font-body;
   font-weight: 600;
   color: $primary1;
+
   &:hover {
     text-decoration: none;
   }
@@ -433,6 +435,7 @@ body {
 .our-photographers__left-button {
   left: -17px;
   display: none;
+
   img {
     transform: rotateY(180deg);
   }
@@ -475,17 +478,21 @@ body {
   position: relative;
   height: 378px;
 }
+
 .form-section__form {
   margin-top: 40px;
 }
+
 .form-section__form__mail {
   @include input;
 }
+
 .form-section__form__submit {
   @include btn-primary;
   width: 410px;
   margin-top: 24px;
 }
+
 .form-section__personal {
   font-weight: 500;
   font-size: 15px;
@@ -493,13 +500,16 @@ body {
   color: $black60;
   width: 410px;
   margin-top: 24px;
+
   a {
     color: $primary1;
+
     &:hover {
       text-decoration: none;
     }
   }
 }
+
 .form-section__background {
   position: absolute;
   left: 50%;
@@ -562,45 +572,56 @@ body {
   padding: 0;
 
 }
+
 //--Footer
 .footer {
   padding: 120px 0;
 }
+
 .footer__copyrights {
   @include font-caption;
   margin-left: 4px;
 }
+
 .footer__faq {
   margin-left: 90px;
   margin-right: 95px;
 }
+
 .footer__faq__item {
   margin-bottom: 15px;
 }
+
 .footer__faq,
 .footer__social-networks {
   ul {
     padding: 0;
   }
 }
+
 .footer__contacts {
   @include font-body;
   font-weight: 600;
   color: $primary1;
 }
+
 .footer__faq__item,
 .footer__social-networks__item {
   list-style-type: none;
+
   a {
     @include font-body;
+
     &:hover {
       text-decoration: none;
     }
   }
 }
+
 .footer__social-networks {
   margin-top: 14px;
 }
+
 .footer__social-networks__item {
   margin-right: 15px;
 }
