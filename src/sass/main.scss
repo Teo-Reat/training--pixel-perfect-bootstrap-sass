@@ -211,6 +211,9 @@ body {
 .reviews {
   padding: 120px 0;
 }
+.reviews__review {
+  border-radius: 16px;
+}
 .reviews__title {
   @include font-title1;
   margin-left: -20px;
@@ -319,6 +322,110 @@ body {
   margin: 84px 0 0 18px;
   @include font-body;
   font-weight: 600;
-  color: $primary1
+  color: $primary1;
 }
-
+//--our photographers section
+.our-photographers {
+  padding: 120px 0 338px;
+}
+.our-photographers__title {
+  @include font-title1;
+}
+.our-photographers__row {
+  position: relative;
+}
+.our-photographers__left-button,
+.our-photographers__right-button {
+  display: block;
+  height: 64px;
+  width: 64px;
+  top: 150px;
+  box-shadow: $shadow-light;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  background: $white;
+  z-index: 10;
+}
+.our-photographers__left-button {
+  left: -32px;
+  display: none;
+}
+.our-photographers__right-button {
+  right: -32px;
+}
+.our-photographers__person {
+  width: 358px;
+  height: 364px;
+  margin-top: 64px;
+  position: relative;
+  box-shadow: $shadow-light;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.our-photographers__person__icon {
+  position: absolute;
+  top: 176px;
+  left: 32px;
+}
+.our-photographers__person__name {
+  @include font-title2;
+  margin: 32px 0 0 32px;
+}
+.our-photographers__person__count {
+  @include font-body;
+  margin: 4px 0 0 32px;
+}
+//--form section
+.form-section {
+  background: $secondary;
+  width: 100%;
+}
+.form-section__background {
+  height: 378px;
+  background: url("../../src/assets/img/photographer.jpg") no-repeat 25% 75%;
+  background-size: cover;
+}
+//--questions & answers
+.questions-and-answers {
+  padding: 120px 0;
+}
+.questions-and-answers__title {
+  @include font-title1
+}
+.questions-and-answers__block {
+  box-shadow: $shadow-light;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  margin-top: 50px;
+}
+.questions-and-answers__block__item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+.questions-and-answers__item__question {
+  @include font-title2;
+  line-height: 28px;
+  margin: 26px 32px;
+  width: 80%;
+}
+.questions-and-answers__item__answer {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: $black60;
+  margin: 0 32px 26px;
+  width: 80%;
+}
+.questions-and-answers__toggle {
+  background: transparent;
+  border: none;
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: -5px;
+  right: 24px;
+  padding: 0;
+}
