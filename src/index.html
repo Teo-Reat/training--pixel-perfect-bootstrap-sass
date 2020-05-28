@@ -82,7 +82,7 @@
                 и высокий уровень сервиса</p>
         </div>
         <div class="row reviews__row d-flex justify-content-lg-around">
-            <div class="col-lg-4">
+            <div class="reviews__block">
                 <div class="reviews__review">
                     <p>Спасибо большое за помощь и содействие!</p>
                 </div>
@@ -96,10 +96,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="reviews__block">
                 <div class="reviews__review">
                     <p>Работа с сервисом приносит радость, потому что высочайший профессионализм, удобство,
-                        оперативность, и просто приятные люди!</p>
+                        оперативность, <br>и просто приятные люди!</p>
                 </div>
                 <div class="reviews__author d-flex justify-content-lg-start">
                     <div class="reviews__author__avatar">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="reviews__block">
                 <div class="reviews__review">
                     <p>Это супер крутая инструкция и вы делаете очень полезную вещь 🙂 Спасибо ❤️</p>
                 </div>
@@ -186,8 +186,9 @@
                 <div class="col-lg-6 wrapper form-section__wrapper">
                     <h2 class="form-section__title">Хочешь у нас  разместиться?</h2>
                     <form action="" class="form-section__form">
-                        <label>
-                            <input type="text" class="form-section__form__mail" placeholder="Ваша почта">
+                        <label for="e-mail_input" class="form-section__form__label">
+                            <input type="text" class="form-section__form__mail" id="e-mail_input">
+                            <span class="form-section__form__placeholder">Ваша почта</span>
                         </label>
                         <button class="form-section__form__submit" type="submit">Хочу разместиться</button>
                     </form>

@@ -91,7 +91,8 @@ $shadow-heavy: 0 4px 64px rgba(0, 0, 0, 0.2);
 //--inputs
 @mixin input {
   border: 2px solid $black20;
-  padding: 18px 28px;
+  padding: 28px 28px 8px;
+  outline: $secondary;
   width: 410px;
   border-radius: 8px;
   &:focus {
@@ -261,7 +262,15 @@ body {
 
 //--reviews section
 .reviews {
-  padding: 120px 0;
+  padding: 120px 0 98px;
+}
+
+.reviews__block {
+  width: 345px;
+  margin-left: 5px;
+  &:nth-child(3) {
+    margin-right: -5px;
+  }
 }
 
 .reviews__review {
@@ -292,7 +301,7 @@ body {
 }
 
 .reviews__author {
-  padding: 32px 32px;
+  padding: 19px 32px;
 }
 
 .reviews__author__avatar {
@@ -316,9 +325,11 @@ body {
 
   span {
     font-weight: 500;
+    display: block;
     font-size: 15px;
     line-height: 20px;
     color: $black60;
+    margin-top: -5px;
   }
 }
 
@@ -491,8 +502,30 @@ body {
   margin-top: 33px;
 }
 
+.form-section__form__label {
+  position: relative;
+}
+
+.form-section__form__placeholder {
+  position: absolute;
+  display: block;
+  @include font-caption;
+  font-weight: 600;
+  width: 200px;
+  height: 20px;
+  top: 20px;
+  left: 30px;
+}
+
 .form-section__form__mail {
   @include input;
+  @include font-body;
+  font-weight: 600;
+  color: $black;
+  &:focus + .form-section__form__placeholder {
+    top: 5px;
+    font-size: 13px;
+  }
 }
 
 .form-section__form__submit {
