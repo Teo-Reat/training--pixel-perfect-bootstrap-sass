@@ -1,5 +1,5 @@
 //Include bootstrap
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap';
 
 //Globals:
 //--colors
@@ -97,6 +97,26 @@ $shadow-heavy: 0 4px 64px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   &:focus {
     border: 2px solid $primary1;
+  }
+}
+@mixin input-group {
+  border: 1px solid $black20;
+  border-radius: 4px;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  display: block;
+  color: $black;
+  height: 45px;
+  &:focus {
+    border: 1px solid $primary1;
+    outline: transparent;
+    box-shadow: none;
+  }
+  &:active {
+    outline: transparent;
+    box-shadow: none;
   }
 }
 
@@ -666,4 +686,349 @@ body {
 
 .footer__social-networks__item {
   margin-right: 15px;
+}
+
+//--Right block section
+.right-block {
+  height: 900px;
+  width: 400px;
+  padding: 56px 32px 188px;
+  font-family: Arial, sans-serif;
+  box-shadow: $shadow-heavy;
+  margin: 40px auto;
+  p {
+    font-size: 13px;
+    line-height: 16px;
+    color: #8D99A7;
+    margin: 0;
+  }
+}
+.right-block__name,
+.right-block__block_height,
+.right-block__margin_top,
+.right-block__margin_bottom,
+.right-block__header_background,
+.right-block__size-buttons,
+.right-block__submit {
+  margin-bottom: 24px;
+}
+.right-block__name p,
+.right-block__block_height p,
+.right-block__margin_top p,
+.right-block__margin_bottom p {
+  margin-bottom: -18px;
+}
+.right-block__header_background p,
+.right-block__size-buttons p,
+.right-block__size-input p,
+.right-block__type p {
+  margin-bottom: 7px;
+}
+//--name
+.right-block__name {
+  margin-top: -20px;
+}
+#right-block__name {
+  @include input_group;
+  width: 336px;
+}
+//--height
+#right-block__block_height,
+#right-block__margin_bottom,
+#right-block__margin_top {
+  @include input-group;
+  outline: none;
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+#right-block__block-height__button,
+#right-block__margins__button1,
+#right-block__margins__button2 {
+  @include input-group;
+  width: 60px;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  &:before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 20px;
+    display: block;
+    background: rgba(0, 0, 0, 0.25);
+    left: 0;
+    top: 12px;
+    z-index: 10;
+  }
+  &:focus {
+    border-left: none;
+  }
+}
+//--margins
+.right-block__margin_top,
+.right-block__margin_bottom {
+  width: 50%;
+}
+.right-block__margin_bottom {
+  margin-left: 8px;
+}
+.right-block__margin_top {
+  margin-right: 8px;
+}
+.right-block__margin_top__menu,
+.right-block__margin_bottom__menu {
+  min-width: 60px;
+  border: none;
+  box-shadow: $shadow-light;
+}
+.right-block__menu__active {
+  color: $primary1;
+}
+.right-block__margin_top__menu a,
+.right-block__margin_bottom__menu a{
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+}
+//--header background
+.right-block__header_background__range {
+  margin-top: -34px;
+}
+#right-block__header_background1,
+#right-block__header_background2, {
+  @include input_group;
+  width: 168px;
+}
+#right-block__header_background1 {
+  border-radius: 4px 0 0 4px;
+  border-right: none;
+}
+#right-block__header_background2 {
+  border-radius: 0 4px 4px 0;
+  border-left: none;
+  text-align: right;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 304px; /* Specific width is required for Firefox. */
+  margin: 0 auto;
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 304px;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  border: 2px solid $white;
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: $black;
+  cursor: pointer;
+  margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  border: 3px solid $white;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: $black;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  border: 3px solid $white;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: $black;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 304px;
+  height: 2px;
+  cursor: pointer;
+  background: linear-gradient(0.25turn, $white, $black);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+
+input[type=range]::-moz-range-track {
+  width: 304px;
+  height: 2px;
+  cursor: pointer;
+  background: linear-gradient(0.25turn, $white, $black);
+}
+
+input[type=range]::-ms-track {
+  width: 304px;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+input[type=range]::-ms-fill-upper {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: linear-gradient(0.25turn, $white, $black);
+}
+//--size buttons
+.right-block__size-buttons__item {
+  @include input-group;
+  background: white;
+  color: #8D99A7;
+  border-color: rgba(0, 0, 0, 0.25);
+  border-right: none;
+  border-left: none;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 20px;
+    display: block;
+    background: rgba(0, 0, 0, 0.25);
+    right: 0;
+    top: 12px;
+    z-index: 10;
+  }
+}
+.right-block__size-buttons__item:first-child {
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  &:active {
+    border-left: 1px solid $primary1;
+  }
+  &:focus {
+    border-left: 1px solid $primary1;
+  }
+}
+.right-block__size-buttons__item:last-child {
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  &:active {
+    border-right: 1px solid $primary1;
+  }
+  &:after {
+    display: none;
+  }
+  &:focus {
+    border-right: 1px solid $primary1;
+  }
+}
+.right-block__size-buttons__active {
+  color: $black;
+}
+//--size input
+.right-block__size-input__settings,
+.right-block__size-input__multiply {
+  background: #F0F2F6;
+  border-left: none;
+  border-right: none;
+  padding: 6px 10px;
+}
+.right-block__size-input__multiply {
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  padding-right: 14px;
+}
+.right-block__size-input__item {
+  @include input-group;
+  border-right: none;
+  background: #F0F2F6;
+}
+.right-block__size-input {
+  margin-bottom: 12px;
+}
+//--button
+.right-block__submit {
+  @include input-group;
+  background: $white;
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #293ACC;
+}
+//--type dropdown
+#dropdownMenu2 {
+  @include input-group;
+  width: 100%;
+  background-color: $white;
+  color: $black;
+  text-align: left;
+  position: relative;
+  &:after {
+    position: absolute;
+    right: 14px;
+    top: 22px;
+    display: block;
+  }
+  &:active {
+    background: $white;
+    color: $white;
+    border-color: $primary1;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
+.right-block__type__menu {
+  width: 100%;
+  top: 5px;
+  position: relative;
+  border: none;
+  box-shadow: $shadow-light;
+}
+.type__menu__item {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19px;
+  color: #0A083A;
+  position: relative;
+  &:after {
+    content: url("../../src/assets/img/icons/done.svg");
+    display: none;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 4px;
+    right: 10px;
+    &:hover {
+      background-color: #F0F2F6;
+    }
+  }
+}
+.type__menu__active:after {
+  display: block;
+}
+.type__menu__link {
+  color: #8D99A7;
 }
